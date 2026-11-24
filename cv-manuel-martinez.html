@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CV — Manuel Martínez</title>
+<style>
+  :root {
+    --ink: #1c2430;
+    --muted: #5b6675;
+    --accent: #1f4e79;
+    --rule: #d8dee6;
+  }
+
+  * { box-sizing: border-box; }
+
+  @page { size: A4; margin: 0; }
+
+  body {
+    margin: 0;
+    background: #e9edf2;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.42;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 13mm 14mm 11mm;
+    background: #fff;
+    box-shadow: 0 2px 18px rgba(20, 30, 45, .12);
+  }
+
+  /* ---------- Encabezado ---------- */
+  header {
+    border-bottom: 2.5px solid var(--accent);
+    padding-bottom: 7mm;
+    margin-bottom: 6mm;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: 700;
+    letter-spacing: .4px;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+
+  .headline {
+    margin: 2.5mm 0 3mm;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: .2px;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5mm 6mm;
+    font-size: 8.8pt;
+    color: var(--muted);
+  }
+
+  .contact span { white-space: nowrap; }
+  .contact b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Estructura de dos columnas ---------- */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.85fr 1fr;
+    gap: 0 9mm;
+  }
+
+  section { margin-bottom: 5.5mm; }
+
+  h2 {
+    margin: 0 0 2.5mm;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 14mm;
+    height: 1.5px;
+    background: var(--accent);
+    margin-top: 1.2mm;
+    opacity: .55;
+  }
+
+  p { margin: 0 0 2mm; text-align: justify; }
+
+  /* ---------- Entradas ---------- */
+  .entry { margin-bottom: 4mm; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4mm;
+  }
+
+  .entry-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .entry-sub {
+    font-size: 9pt;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .entry-date {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  ul {
+    margin: 1.5mm 0 0;
+    padding-left: 4.5mm;
+  }
+
+  li { margin-bottom: 1.1mm; }
+  li::marker { color: var(--accent); }
+
+  .tags { margin-top: 1.5mm; font-size: 8.8pt; color: var(--accent); font-weight: 600; }
+
+  /* ---------- Barra lateral ---------- */
+  .side section { margin-bottom: 5.5mm; }
+
+  .skill-group { margin-bottom: 3mm; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-label {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: .8mm;
+  }
+
+  .skill-text { font-size: 9pt; color: var(--muted); }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9pt;
+    margin-bottom: 1.2mm;
+  }
+
+  .lang-row span:last-child { color: var(--muted); }
+
+  .side ul { padding-left: 4mm; font-size: 9pt; }
+
+  /* ---------- Pie ---------- */
+  footer {
+    margin-top: 4mm;
+    padding-top: 2.5mm;
+    border-top: 1px solid var(--rule);
+    font-size: 7.8pt;
+    color: #8b95a3;
+    text-align: center;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; padding: 12mm 14mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Manuel Martínez</h1>
+    <div class="headline">Estudiante de Ingeniería en Sistemas Computacionales · 8.º cuatrimestre</div>
+    <div class="contact">
+      <span><b>Correo:</b> manuel.martinez@ejemplo.com</span>
+      <span><b>Tel.:</b> +52 55 0000 0000</span>
+      <span><b>Ubicación:</b> Ciudad de México, México</span>
+      <span><b>LinkedIn:</b> /in/manuelmartinez</span>
+      <span><b>GitHub:</b> github.com/manuelmartinez</span>
+    </div>
+  </header>
+
+  <div class="body-grid">
+
+    <!-- ============ Columna principal ============ -->
+    <main>
+
+      <section>
+        <h2>Perfil profesional</h2>
+        <p>
+          Estudiante de octavo cuatrimestre de Ingeniería en Sistemas Computacionales con formación
+          en desarrollo de software, bases de datos y redes. Experiencia en el diseño y construcción
+          de aplicaciones web y APIs a través de proyectos académicos y trabajos freelance.
+          Interesado en desarrollo backend, calidad de software y soluciones en la nube.
+          Persona organizada, con facilidad para aprender tecnologías nuevas y trabajar en equipo
+          bajo metodologías ágiles.
+        </p>
+      </section>
+
+      <section>
+        <h2>Formación académica</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <div class="entry-title">Ingeniería en Sistemas Computacionales</div>
+              <div class="entry-sub">Universidad [Nombre de la universidad] · Ciudad de México</div>
+            </div>
+            <div class="entry-date">2023 – 2027</div>
+          </div>
+          <ul>
+            <li>Cursando el 8.º cuatrimestre; promedio general de 9.2/10.</li>
+            <li>Materias destacadas: Ingeniería de software, Bases de datos, Redes, Sistemas operativos, Desarrollo web.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Proyectos académicos y personales</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <div class="entry-title">Sistema web de gestión de inventario</div>
+              <div class="entry-sub">Proyecto integrador · Equipo de 4 personas</div>
+            </div>
+            <div class="entry-date">2026</div>
+          </div>
+          <ul>
+            <li>Aplicación para control de stock, entradas y salidas, con roles de administrador y almacenista.</li>
+            <li>Backend en Laravel y MySQL; interfaz responsiva con Bootstrap; reportes exportables a PDF y Excel.</li>
+            <li>Diseño de la base de datos y del modelo entidad-relación, con más de 15 tablas normalizadas.</li>
+          </ul>
+          <div class="tags">Laravel · PHP · MySQL · Bootstrap · Git</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <div class="entry-title">API REST para gestión de tareas</div>
+              <div class="entry-sub">Proyecto personal</div>
+            </div>
+            <div class="entry-date">2025</div>
+          </div>
+          <ul>
+            <li>API con autenticación mediante JWT, validación de datos y documentación con Swagger.</li>
+            <li>Pruebas unitarias de los endpoints principales y despliegue en contenedores Docker.</li>
+          </ul>
+          <div class="tags">Node.js · Express · MongoDB · JWT · Docker</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <div class="entry-title">Aplicación móvil de seguimiento de hábitos</div>
+              <div class="entry-sub">Proyecto de curso · Desarrollo móvil</div>
+            </div>
+            <div class="entry-date">2025</div>
+          </div>
+          <ul>
+            <li>App multiplataforma con recordatorios, estadísticas de rachas y sincronización en la nube.</li>
+            <li>Autenticación con Firebase y almacenamiento de datos en Firestore.</li>
+          </ul>
+          <div class="tags">Flutter · Dart · Firebase</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experiencia</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <div class="entry-title">Desarrollador web freelance</div>
+              <div class="entry-sub">Proyectos independientes</div>
+            </div>
+            <div class="entry-date">2025 – Actualidad</div>
+          </div>
+          <ul>
+            <li>Desarrollo de sitios y sistemas a la medida para pequeños negocios locales.</li>
+            <li>Levantamiento de requerimientos, implementación y capacitación básica al usuario final.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <div class="entry-title">Practicante de soporte técnico</div>
+              <div class="entry-sub">[Empresa] · Ciudad de México</div>
+            </div>
+            <div class="entry-date">2025</div>
+          </div>
+          <ul>
+            <li>Atención de incidencias de hardware y software para usuarios internos.</li>
+            <li>Documentación de procedimientos y apoyo en el inventario de equipos de cómputo.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ Barra lateral ============ -->
+    <aside class="side">
+
+      <section>
+        <h2>Habilidades técnicas</h2>
+        <div class="skill-group">
+          <div class="skill-label">Lenguajes</div>
+          <div class="skill-text">Java, Python, JavaScript, PHP, C#, SQL</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Desarrollo web</div>
+          <div class="skill-text">HTML5, CSS3, React, Node.js, Laravel, Bootstrap</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Bases de datos</div>
+          <div class="skill-text">MySQL, SQL Server, MongoDB, Firestore</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Herramientas</div>
+          <div class="skill-text">Git/GitHub, Docker, Linux, Postman, Figma</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Redes y sistemas</div>
+          <div class="skill-text">TCP/IP, configuración de routers, Windows Server, virtualización</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Certificaciones</h2>
+        <ul>
+          <li>Fundamentos de redes — Cisco Networking Academy</li>
+          <li>Scrum Foundation — CertiProf</li>
+          <li>Azure Fundamentals (AZ-900) — en curso</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Idiomas</h2>
+        <div class="lang-row"><span>Español</span><span>Nativo</span></div>
+        <div class="lang-row"><span>Inglés</span><span>B2 · Intermedio alto</span></div>
+      </section>
+
+      <section>
+        <h2>Competencias</h2>
+        <ul>
+          <li>Trabajo en equipo</li>
+          <li>Resolución de problemas</li>
+          <li>Comunicación efectiva</li>
+          <li>Gestión del tiempo</li>
+          <li>Aprendizaje continuo</li>
+          <li>Pensamiento analítico</li>
+        </ul>
+      </section>
+
+    </aside>
+  </div>
+
+  <footer>
+    Referencias disponibles a solicitud · Documento actualizado en noviembre de 2026
+  </footer>
+
+</div>
+</body>
+</html>
